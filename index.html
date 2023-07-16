@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi Mager</title>
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav class="navbar">
+      <a href="#home" class="navbar-logo">Kopi<span>Mager</span>.</a>
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Pesanan</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shoping-card"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!--bagian utama  start-->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Kopi:"<span>Terbaik untuk kenyamanan setiap seduhan</span>"</h1>
+        <a href="#" class="cta">Lihat Menu</a>
+      </main>
+    </section>
+    <!--bagian utama  end-->
+
+    <!-- about section start -->
+    <section class="about" id="about">
+      <h2><span>Tentang</span> kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/gambarmenu/12222.jpg" alt="tentang kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa Memilih Kopi Kami?</h3>
+          <p>
+            Inovasi dalam Cita Rasa: Kami terus mengembangkan inovasi dalam
+            menciptakan rasa kopi yang unik dan menarik. Kami berusaha untuk
+            memberikan pengalaman kopi yang berbeda dan memuaskan bagi pelanggan
+            kami.
+          </p>
+          <p>
+            Aroma yang membahagiakan : Kami mengerti bahwa aroma kopi adalah
+            salah satu faktor penting dalam menciptakan pengalaman kopi yang
+            memikat. Kopi kami memiliki aroma yang mengunggah selera dan
+            membangkitkan sensasi yang menyenangkan sejak pertama kali Anda
+            menciumnya.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- about section end -->
+
+    <!-- menu section start -->
+    <section class="menu" id="menu">
+      <h2><span>Menu</span> kami</h2>
+      <p>Semua yang ada pada menu tersedia</p>
+
+      <div class="row">
+        <div class="menu-card">
+          <img
+            src="img/gambarmenu/seis coffee ice.jpg"
+            alt=""
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">-MAGER COFFEE-</h3>
+          <p class="menu-card-price">IDR 33K</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/gambarmenu/vanila coffee.jpg"
+            alt=""
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">-VANILA COFFEE-</h3>
+          <p class="menu-card-price">IDR 27K</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/gambarmenu/Caramel coffee.jpg"
+            alt=""
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">-CARAMEL COFFEE-</h3>
+          <p class="menu-card-price">IDR 28K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/gambarmenu/sanger.jpg" alt="" class="menu-card-img" />
+          <h3 class="menu-card-title">-SANGER-</h3>
+          <p class="menu-card-price">IDR 22K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/gambarmenu/cap.jpg" alt="" class="menu-card-img" />
+          <h3 class="menu-card-title">-CAPPUCCINO-</h3>
+          <p class="menu-card-price">IDR 23K</p>
+        </div>
+        <div class="menu-card">
+          <img
+            src="img/WhatsApp Image 2023-06-09 at 15.17.29.jpg"
+            alt=""
+            class="menu-card-img"
+          />
+          <h3 class="menu-card-title">-KOPI TONIK-</h3>
+          <p class="menu-card-price">IDR 22K</p>
+        </div>
+      </div>
+    </section>
+    <!-- menu section end -->
+
+    <script>
+      let totalPesanan = 0;
+      let totalHarga = 0;
+
+      function submitForm() {
+        const nama = document.getElementById("nama").value;
+        const jenisKopi = document.getElementById("jenis_kopi").value;
+        const jumlahPesanan = parseInt(
+          document.getElementById("jumlah_pesanan").value
+        );
+        const noMeja = document.getElementById("no_meja").value;
+
+        // Hitung total harga pesanan
+        let hargaPerPesan = 0;
+        if (jenisKopi === "MAGER COFFEE") {
+          hargaPerPesan = 33000;
+        } else if (jenisKopi === "VANILA COFFEE") {
+          hargaPerPesan = 27000;
+        } else if (jenisKopi === "CARAMEL COFFEE") {
+          hargaPerPesan = 28000;
+        } else if (jenisKopi === "SANGER") {
+          hargaPerPesan = 22000;
+        } else if (jenisKopi === "CAPPUCCINO") {
+          hargaPerPesan = 23000;
+        } else if (jenisKopi === "KOPI TONIK") {
+          hargaPerPesan = 22000;
+        }
+
+        const hargaPesanan = hargaPerPesan * jumlahPesanan;
+
+        // Tambahkan jumlah pesanan dan harga ke total
+        totalPesanan += jumlahPesanan;
+        totalHarga += hargaPesanan;
+
+        // Tampilkan jumlah pesanan dan harga
+        document.getElementById("totalPesanan").textContent = totalPesanan;
+        document.getElementById("totalHarga").textContent = totalHarga;
+
+        // Reset form
+        document.getElementById("pesananForm").reset();
+      }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pesanan</title>
+  </head>
+  <body>
+    <form id="pesananForm" action="javascript:void(0);" onsubmit="submitForm()">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" required /><br />
+
+      <label for="jenis_kopi">Jenis Kopi:</label>
+      <select id="jenis_kopi" required>
+        <option value="">Pilih Jenis Kopi</option>
+        <option value="MAGER COFFEE">MAGER COFFEE</option>
+        <option value="VANILA COFFEE">VANILA COFFEE</option>
+        <option value="CARAMEL COFFEE">CARAMEL COFFEE</option>
+        <option value="SANGER">SANGER</option>
+        <option value="CAPPUCCINO">CAPPUCCINO</option>
+        <option value="KOPI TONIK">KOPI TONIK</option></select
+      ><br />
+
+      <label for="jumlah_pesanan">Jumlah Pesanan:</label>
+      <input type="number" id="jumlah_pesanan" required /><br />
+
+      <label for="no_meja">No. Meja:</label>
+      <input type="text" id="no_meja" required /><br />
+
+      <button for="submit">Pesan sekarang</button>
+    </form>
+
+    <div id="pesananInfo">
+      <p>Jumlah Pesanan: <span id="totalPesanan">0</span></p>
+      <p>Jumlah Harga: <span id="totalHarga">0</span></p>
+    </div>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+      <h2><span>Kontak</span> kami</h2>
+      <p>
+        Kirim kan pengalaman anda pada setiap moment di coffee shop kami melalui
+        email
+      </p>
+
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4574106762557!2d106.90347597416527!3d-6.203232760765127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f56735ee53bf%3A0x83c89c866d308f0d!2sKopi%20Mager!5e0!3m2!1sen!2sid!4v1686669872596!5m2!1sen!2sid"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        <form action="">
+          <div class="input-grup">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="nama" />
+          </div>
+          <div class="input-grup">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="E-mail" />
+          </div>
+          <div class="input-grup">
+            <i data-feather="phone"></i>
+            <input type="text" placeholder="No Telepon" />
+          </div>
+
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+    <!-- contact section end -->
+
+    <!-- footer start -->
+    <footer>
+      <div class="sosials">
+        <a href="https://instagram.com/sisilia_sitepu?igshid=OGQ5ZDc2ODk2ZA=="
+          ><i data-feather="instagram"></i
+        ></a>
+        <a href="https://twitter.com/SisiliaSitepu"
+          ><i data-feather="twitter"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100014052277606&mibextid=ZbWKwL"
+          ><i data-feather="facebook"></i
+        ></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#menu">Pesanan</a>
+        <a href="#contact">Kontak</a>
+      </div>
+      <div class="credit">
+        <p>Created By <a href="">Sisilia D. Sitepu</a>. | &copy; 2023</p>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- java script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
